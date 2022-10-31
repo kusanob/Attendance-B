@@ -1,28 +1,36 @@
 <% provide(:title, "ユーザー一覧") %>
-<h1>ユーザー一覧</h1>
+<% provide(:class_title, "ユーザー一覧") %>
 
-<div class = "col-md-10 col-md-offset-1">
-  <%= will_paginate %>
-  <table class = "table table-condensed table-hover" id = "table-users">
-    <thead>
-      <tr>
-        <th><%= User.human_attribute_name :name %></th>
-        <th></th>
-      </tr>
-    </thead>
-    
-    <% @users.each do |user| %>
-      <tr>
-        <td><%= link_to user.name, user %></td>
-        <td>
-          <% if current_user.admin? && !current_user?(user) %>
-            <%= link_to "削除", user, method: :delete,
-                data: { confirm: "削除してよろしいてすか？" },
-                class: "btn btn-danger" %>
+<%= render "index" %>
+
+<%= will_paginate %>
+
+<table class = "table table-condensed table-hover" id = "table-users">
+  <thead>
+    <tr>
+      <th><%= User.human_attribute_name :name %></th><th></th>
+    </tr>
+  </thead>
+  
+  <% @users.each do |user| %>
+    <tr>
+      <td>
+        <% if current_user.admin? %>
+          <%= link_to user.name, user %>
+        <% else %>
+          <%= user.name %>
+        <% end %>
+      </td>
+      <td>
+        <% if current_user.admin? && !current_user?(user) %>
+          <%= link_to "削除", user, method: :delete,
+              data: { confirm: "本当に削除してよろしいですか？",
+                      cancel: "キャンセル",
+                      commit: "削除",
+                   }, title: "#{user.name}のデータを削除します" %>
           <% end %>
-        </td>
-      </tr>
-    <% end %>
-  </table>
-  <%= will_paginate %>
-</div>
+      </td>
+    </tr>
+  <% end %>
+</table>
+<%= will_paginate %>

@@ -3,7 +3,55 @@
 .user-table {
   vertical-align: middle;
   text-align: center;
+  background-color: #c0c0c0;
 }
+
+.label-signup {
+  margin-top: 5px;
+}
+
+.btn-signup {
+  margin-top: 10px;
+}
+
+.label-user--edit {
+  margin-top: 5px;
+}
+
+.btn-user--edit {
+  margin-top: 10px;
+}
+
+/* 勤怠情報テーブル */
+
+#table-attendances {
+  
+  th {
+    background-color: #eee;
+    vertical-align: middle;
+    text-align: center;
+    width: 200px;
+  }
+  td {
+    vertical-align: middle;
+    text-align: center;
+  }
+  .day {
+    width: 80px;
+  }
+  .time {
+    width: 50px;
+  }
+  
+}
+
+.footer {
+  background-color: #eee;
+}
+
+
+
+/* 入力フォーム */
 
 .label-signup {
   margin-top: 5px;
@@ -28,3 +76,4 @@
     vertical-align: middle;
   }  
 }
+

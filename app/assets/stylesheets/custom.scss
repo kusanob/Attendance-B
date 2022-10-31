@@ -1,7 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-/* universal */
 
 body {
   padding-top: 60px;
@@ -23,7 +22,6 @@ textarea {
   margin-bottom: 10px;
 }
 
-/* typography */
 
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
@@ -50,7 +48,7 @@ p {
   line-height: 1.7em;
 }
 
-/* header */
+/* ヘッダー */
 
 #logo {
   float: left;
@@ -68,7 +66,7 @@ p {
   text-decoration: none;
 }
 
-/* debug */
+/* デバッグ */
 
 .debug_dump {
   clear: both;
@@ -80,7 +78,7 @@ p {
   box-sizing:         border-box;
 }
 
-/* error_messages */
+/* エラーメッセージ */
 
 #error_explanation {
   color: red;
@@ -96,3 +94,4 @@ p {
     color: $state-danger-text;
   }
 }
+

@@ -1,0 +1,16 @@
+<h1><%= yield(:class_title) %></h1>
+
+<div class= "col-sm-offset-8" >
+  <%= search_form_for @q, url:search_users_path do |f| %>
+    <%= f.label :name_cont, 'ユーザー名検索' %>
+    <div class="input-group">
+    <%= f.search_field :name_cont, class: "form-control",  placeholder: 'キーワードを入力...' %>
+    <span class="input-group-btn">
+    <%= f.submit '検索', class: "btn btn-primary" %>
+    </span>
+    </div>
+  <% end %>
+</div>
+
+    
+    
