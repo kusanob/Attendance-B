@@ -62,7 +62,3 @@ class AttendancesController < ApplicationController
       end  
     end
 end
-
-# else
-          # flash[:danger] = "退勤も更新してください"
-          # redirect_to attendances_edit_one_month_user_url(date: params[:date])and return
